@@ -24,13 +24,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Requisição realizada com sucesso")
+	//fmt.Println("Requisição iniciada com sucesso")
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		panic(err)
+		fmt.Println("Tempo da execução insuficiente")
+		os.Exit(1)
+		//panic(err)
 	}
 	defer res.Body.Close()
 	//io.Copy(os.Stdout, res.Body)
+	fmt.Println("Requisição realizada com sucesso")
 
 	body, err := io.ReadAll(res.Body)
 	if err != nil {

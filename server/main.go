@@ -92,7 +92,7 @@ func inserirCotacao(valor *string, r *http.Request) {
 	select {
 	case <-time.After(10 * time.Millisecond):
 
-		db, err := sql.Open("mysql", "root:senha123@tcp(172.26.83.19:32002)/cotacao")
+		db, err := sql.Open("mysql", "root:senha123@tcp(172.26.93.133:32002)/cotacao")
 		if err != nil {
 			panic(err)
 		}
